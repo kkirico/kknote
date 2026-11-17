@@ -1,0 +1,42 @@
+{
+	"name": "kknote",
+	"version": "0.1.0",
+	"private": true,
+	"description": "생각이 머무는 작은 메모장",
+	"author": "kknote",
+	"license": "UNLICENSED",
+	"main": "out/main/index.js",
+	"scripts": {
+		"dev": "electron-vite dev",
+		"build": "electron-vite build",
+		"typecheck": "tsc --noEmit",
+		"test": "vitest run",
+		"test:e2e": "npm run build && playwright test",
+		"dist": "npm run typecheck && npm run build && electron-builder --mac dir",
+		"format": "biome format --write ."
+	},
+	"dependencies": {
+		"@tiptap/react": "3.33.1",
+		"@tiptap/starter-kit": "3.33.1",
+		"@tiptap/extension-task-list": "3.33.1",
+		"@tiptap/extension-task-item": "3.33.1",
+		"@tiptap/extension-placeholder": "3.33.1",
+		"react": "^19.2.0",
+		"react-dom": "^19.2.0",
+		"lucide-react": "^0.577.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.4.0",
+		"@playwright/test": "^1.58.0",
+		"@types/node": "^24.0.0",
+		"@types/react": "^19.2.0",
+		"@types/react-dom": "^19.2.0",
+		"@vitejs/plugin-react": "^5.1.0",
+		"electron": "45.3.0",
+		"electron-builder": "^26.8.0",
+		"electron-vite": "6.0.0",
+		"typescript": "^5.9.0",
+		"vite": "^7.3.0",
+		"vitest": "^4.0.0"
+	}
+}
